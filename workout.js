@@ -39,3 +39,12 @@ async function work()
     }
 }
 
+
+const div = document.getElementById('con');
+const button = document.createElement('button');
+button.textContent = 'Get Workout';
+button.addEventListener('click', ()=> {
+    work();
+});
+div.appendChild(button);
+
