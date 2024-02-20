@@ -1,24 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-
-
-
-        .container {
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#api{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Add column span to 3 */
+   place-items: center; /* Center the items */
+   overflow: scroll;
+}
+ .container {
             background: rgb(255, 255, 255);
             height: 400px;
             width: 250px;
             border-radius: 10px;
             padding: 0rem;
-            
+            margin: 1rem;
         }
 
         .img {
@@ -27,8 +26,8 @@
             width: 100%;
             border-radius: 10px 10px 0px 0px;
             position: relative;
-            /* background-image: url(https://chloeting.com/_next/image?url=https%3A%2F%2Fstatic.chloeting.com%2Fprograms%2F61bd4e9158da74df97000e58%2Fada5d060-86d3-11ed-84dc-29ccec71f3d3.jpeg&w=1920&q=90); */
-            /* background-size: contain; */
+            background-image: url(https://chloeting.com/_next/image?url=https%3A%2F%2Fstatic.chloeting.com%2Fprograms%2F61bd4e9158da74df97000e58%2Fada5d060-86d3-11ed-84dc-29ccec71f3d3.jpeg&w=1920&q=90); 
+            background-size: contain;
             transition: 2s;
             
             
@@ -124,35 +123,3 @@
             width: 50%;
             ;
         }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="img" >
-            <div class="img-details">
-                <ul>
-                    <li> <span class="title">title</span> </li>
-                    <li> <span class="equipement">equipement</span> </li>
-                    <li> <span class="targetMusle">Target Muscle</span> </li>
-                </ul>
-            </div>
-        </div>
-        <div class="info">
-            <div class="duration">
-                <div class="days">
-                    <span><i class="fa-regular fa-calendar"></i> 25 day</span>
-                </div>
-                <div class="time">
-                    <span><i class="fa-regular fa-clock"></i> 20-45 min/day</span>
-                </div>
-            </div>
-            <div class="challange">
-                <span><h4>2024 Weight Loss Challenge</h4></span>
-                <span>Lorem ipsum dolor sit amet consec...</span>
-            </div>
-        </div>
-    </div>
-    <script src="https://kit.fontawesome.com/497338ab40.js" crossorigin="anonymous"></script>
-    <script src="../../fetch/script.js"></script>
-</body>
-</html>
