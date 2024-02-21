@@ -1,6 +1,6 @@
 const api = document.getElementById('api');
 async function excersie() {
-    const url = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/back?limit=9';
+    const url = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/chest?limit=24';
     const options = {
         method: 'GET',
         headers: {
@@ -17,27 +17,27 @@ async function excersie() {
         result.map((item) => {
             api.innerHTML += `
             <div class="container">
-                <div class="img" background-image: url(https://chloeting.com/_next/image?url=https%3A%2F%2Fstatic.chloeting.com%2Fprograms%2F61bd4e9158da74df97000e58%2Fada5d060-86d3-11ed-84dc-29ccec71f3d3.jpeg&w=1920&q=90)>
+                <div class="img" style="background-image: url(${item.gifUrl});">
                     <div class="img-details">
                         <ul>
-                            <li> <span class="title">title</span> </li>
-                            <li> <span class="equipement">equipement</span> </li>
-                            <li> <span class="targetMusle">Target Muscle</span> </li>
+                            <li> <span class="title">${item.bodyPart}</span> </li>
+                            <li> <span class="equipement">equipement : ${item.equipment}</span> </li>
+                            <li> <span class="targetMusle">Secondary Muscle : ${item.secondaryMuscles}</span> </li>
+                        </ul>
+                        <h1>instructions : </h1>
+                        <ul>
+                            <li> <span >1. ${item.instructions[0]}</span> </li>
+                            <li> <span >2. ${item.instructions[1]}</span> </li>
+                            <li> <span >3. ${item.instructions[2]}</span> </li>
+                            <li> <span >4. ${item.instructions[3]}</span> </li>
+                            <li> <span >5. ${item.instructions[4]}</span> </li>
                         </ul>
                     </div>
                 </div>
                 <div class="info">
-                    <div class="duration">
-                        <div class="days">
-                            <span><i class="fa-regular fa-calendar"></i> 25 day</span>
-                        </div>
-                        <div class="time">
-                            <span><i class="fa-regular fa-clock"></i> 20-45 min/day</span>
-                        </div>
-                    </div>
                     <div class="challange">
-                        <span><h4>2024 Weight Loss Challenge</h4></span>
-                        <span>Lorem ipsum dolor sit amet consec...</span>
+                        <span><h4>Name : ${item.name}</h4></span>
+                        <span><h4>Target : ${item.target}</h4></span>
                     </div>
                 </div>
             </div>
