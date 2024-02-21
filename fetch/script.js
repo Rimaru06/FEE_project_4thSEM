@@ -1,6 +1,6 @@
 const api = document.getElementById('api');
-async function excersie() {
-    const url = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/chest?limit=24';
+async function excersie(name) {
+    const url = `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${name}?limit=24`;
     const options = {
         method: 'GET',
         headers: {
@@ -47,4 +47,4 @@ async function excersie() {
         console.error(error);
     }
 }
-excersie();
+excersie("chest");

@@ -14,12 +14,6 @@
 #api::-webkit-scrollbar {
   display: none;
 }
-@media screen and (max-width: 1180px) {
-    #api {
-        grid-template-columns: repeat(2, 0.5fr);
-    }
-
-}
 @media screen and (max-width: 1488px) {
     #api {
         grid-template-columns: repeat(3, 0.5fr); 
