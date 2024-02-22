@@ -1,3 +1,5 @@
+const params = new URLSearchParams(window.location.search);
+const param = params.get('name');
 const api = document.getElementById('api');
 async function excersie(name) {
     const url = `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${name}?limit=24`;
@@ -40,11 +42,12 @@ async function excersie(name) {
                         <span><h4>Target : ${item.target}</h4></span>
                     </div>
                 </div>
-            </div>
-            `;
+            </div> `;
         }); 
     } catch (error) {
         console.error(error);
     }
 }
-excersie("chest");
+excersie(param)
+
+
