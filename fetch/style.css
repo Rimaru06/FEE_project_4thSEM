@@ -7,95 +7,68 @@
   height: 100vh;
   width: 100vw;
   display: grid;
-  grid-template-columns: repeat(4, 0.5fr); 
+  grid-template-columns: repeat(2, 0.5fr);
   place-items: center; 
   overflow: scroll;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
 }
 #api::-webkit-scrollbar {
   display: none;
 }
-@media screen and (max-width: 1488px) {
+
+@media screen and (max-width: 900px) {
     #api {
-        grid-template-columns: repeat(3, 0.5fr); 
+        grid-template-columns: repeat(1, 1fr);
     }
 
 }
-@media screen and (max-width: 1130px) {
-    #api {
-        grid-template-columns: repeat(2, 0.5fr); 
-    }
 
-}
-@media screen and (max-width: 796px) {
-    #api {
-        grid-template-columns: repeat(1, 1fr); 
-    }
-
-}
 
 .container {
-  background: rgb(255, 255, 255);
-  height: 400px;
-  width: 350px;
-  border-radius: 10px;
-  padding: 1rem;
+    max-width: 700px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    color: #333;
+}
+h2 {
+    color: #555;
+}
+h3 {
+    color: #777;
+}
+.sets div {
+    margin-bottom: 20px;
+}
+p {
+    color: #444;
+}
+hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+}
+.video button {
+    background-color: #ff4500;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.video button:hover {
+    background-color: #ff6347;
+}
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 100%;
+        border-radius: 0;
+    }
 }
 
-.img {
-  background-color: rgb(255, 255, 255);
-  height: 75%;
-  width: 100%;
-  border-radius: 10px 10px 0px 0px;
-  position: relative;
-  background-size: contain;
-background-repeat: no-repeat;
-background-position: center;
-  transition: 2s ease;
-}
-
-.img-details {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(72, 72, 72, 0.473);
-  border-radius: 0 0 10px 10px;
-  padding: 10px;
-  box-sizing: border-box;
-  display: none;
-  transition: 2s ease;
-  color: white;
-  overflow: scroll;
-}
-.img-details::-webkit-scrollbar {
-  display: none;
-}
-.img-details ul li span {
-  list-style-type: none;
-}
-.img-details ul li {
-  list-style: none;
-}
-
-.img:hover .img-details {
-  display: block;
-  transition: 2s;
-}
-
-.info {
-  background-color: rgba(186, 186, 186, 0.404);
-  height: 25%;
-  border-radius: 10px;
- 
-}
-
-.challange {
-  height: 50%;
-  font-size: 1rem;
-  padding: 1rem;
-}
-
-.challange span {
-  width: 50%;
-}

@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display&family=Protest+Revolution&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 * {
   /* font-family: "Montserrat", sans-serif; */
-   font-family: "Protest Revolution", sans-serif;
+   font-family:  sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -154,20 +154,20 @@ transition: 0.5s;
     display: flex;
     flex-direction: column;
     gap: 3px;
-  
+
   }
   .navbar {
     height: 8rem;
     display: flex;
     flex-direction: column;
     gap: 3px;
- 
+
   }
   .navbar .icons i {
   font-size: 1.5rem;
 }
 .banner-section{
     height: calc(100vh - 8rem - 60px);
- 
+
 }
 }
