@@ -41,7 +41,7 @@ async function excersie(name) {
   </div>
   <hr>
   <div class="video">
-    <a href="item.Video"><button>Watch Video</button></a>
+    <a href="${item.Video}"><button>Watch Video</button></a>
   </div>
 </div>
 
