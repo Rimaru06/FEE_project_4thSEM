@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .color-red{
+            color: red;
+        }
+        .w_plans{
+            border-bottom: 1px solid rgb(183, 183, 183);
+            padding-bottom: 5px;
+        }
+        .navwrapper{
+        border-bottom: 1px solid rgb(183, 183, 183);
+        padding: 1rem;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+            background: #ffffff;;
+        }
+        .nav{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            ul{
+                display: flex;
+                flex-direction: row;
+                list-style: none;
+                gap: 3rem;
+                padding-bottom: 1rem;
+            }
+            
+            .register{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: .5rem;
+                ;
+            }
+            .register button{
+                padding: .7rem 2rem;
+                border-radius: 10rem;
+                outline: none;
+                border: none;
+                
+            }
+            .signup{
+                color: white;
+                background: rgb(45, 45, 45);
+            }
+            .register{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+            }
+            
+            
+        }
+        .collectionandfilter{
+            border-bottom: 1px solid rgb(183, 183, 183);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;;
+            padding: .8rem;
+            gap: 50rem;
+            background: #ffffff;
+            button{
+                padding: .7rem 1rem;
+                border-radius: 10rem;
+                outline: none;
+                border: none;
+                background-color: rgb(255, 255, 255);
+                color: rgb(105, 105, 105);
+            }
+            .Colection{
+                background-color: rgb(244, 244, 244);
+            }
+        }
+        .cont1{
+            
+            display: flex;
+            flex-direction: row;
+            ;
+            .latest{
+                padding: .3rem;
+                display: flex;
+                flex-direction: row;
+                
+                
+                width: 35%;
+                ;
+                .img{
+                    
+                    height: 100%;
+                    width: 50%;
+                    background: url("https://i.pinimg.com/564x/18/ab/a3/18aba3429d16867f5d0c64c6ca47fad8.jpg");
+                    background-size: cover;
+                    border-radius: 1rem;
+                    background-repeat: no-repeat;
+                    ;
+
+                }
+                .des{
+                    width: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 1rem;
+                    gap: 2rem;
+                    padding: 1rem;
+                    ;
+                    .dateandtime{
+                        span{
+                            background-color: rgb(236, 236, 236);
+                            padding: .5rem;
+                            border-radius: 10rem;
+                            color: rgb(105, 105, 105);
+                        }
+                    }
+                    .info ul{
+                        list-style: none;
+                        display: flex;
+                        gap: 1rem;
+                        flex-direction: column;
+                        margin-bottom: 1rem;
+                        
+                    }
+                    button{
+                        outline: none;
+                        border: none;
+                        background: rgb(56, 56, 56);
+                        color: white;
+                        padding: .5rem 1rem;
+                        border-radius: 10rem;
+                    }
+                       
+                }
+                
+            }
+        }
+        .cont2{
+            
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+
+            ;
+            .subcont{
+                height: 25rem;
+                background-color:rgb(255, 255, 255);
+                width: 20%;
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                border-radius: 1rem;
+                
+                ;
+                 .img{
+                    height: 80%;
+                   
+                 }
+            }
+            .info{
+                display: flex;
+                flex-direction: column;
+                gap: .5rem;
+                padding: 1rem;
+                span{
+                    background-color: rgb(223, 223, 223);
+                    padding: .2rem .7rem;
+                    border-radius: 10rem;
+                    
+
+                };
+                .dataandtime{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
+                
+                    button{
+                        outline: none;
+                        border: none;
+                        background: rgb(56, 56, 56);
+                        color: white;
+                        padding: .5rem .3rem;
+                        border-radius: 10rem;
+                        font-size: small;
+                    }
+                
+                
+            }
+            
+        }
+
+
+
+
+
+
+
+        
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: acumin-pro, system-ui, sans-serif;
+  margin: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  font-size: 14px;
+  background-color: #f4f4f4;
+  align-items: start;
+  min-height: 100vh;
+}
+
+.footer {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 30px 30px 20px 30px;
+  color: #2f2f2f;
+  background-color: #fff;
+  border-top: 1px solid #e5e5e5;
+}
+
+.footer > * {
+  flex:  1 100%;
+}
+
+.footer__addr {
+  margin-right: 1.25em;
+  margin-bottom: 2em;
+}
+
+.footer__logo {
+  font-family: 'Pacifico', cursive;
+  font-weight: 400;
+  text-transform: lowercase;
+  font-size: 1.5rem;
+}
+
+.footer__addr h2 {
+  margin-top: 1.3em;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.nav__title {
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.footer address {
+  font-style: normal;
+  color: #999;
+}
+
+.footer__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  max-width: max-content;
+  background-color: rgb(33, 33, 33, 0.07);
+  border-radius: 100px;
+  color: #2f2f2f;
+  line-height: 0;
+  margin: 0.6em 0;
+  font-size: 1rem;
+  padding: 0 1.3em;
+}
+
+.footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer li {
+  line-height: 2em;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+.footer__nav {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.footer__nav > * {
+  flex: 1 50%;
+  margin-right: 1.25em;
+}
+
+.nav__ul a {
+  color: #999;
+}
+
+.nav__ul--extra {
+  column-count: 2;
+  column-gap: 1.25em;
+}
+
+.legal {
+  display: flex;
+  flex-wrap: wrap;
+  color: #999;
+}
+  
+.legal__links {
+  display: flex;
+  align-items: center;
+}
+
+.heart {
+  color: #2f2f2f;
+}
+
+@media screen and (min-width: 24.375em) {
+  .legal .legal__links {
+    margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 40.375em) {
+  .footer__nav > * {
+    flex: 1;
+  }
+  
+  .nav__item--extra {
+    flex-grow: 2;
+  }
+  
+  .footer__addr {
+    flex: 1 0px;
+  }
+  
+  .footer__nav {
+    flex: 2 0px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+            .navwrapper {
+                padding: 0.5rem;
+            }
+
+            .nav ul {
+                gap: 1rem;
+            }
+
+            .collectionandfilter {
+                gap: 2rem;
+            }
+
+            .cont1, .cont2 {
+                width: 100%;
+            }
+
+            .cont1 .latest, .cont2 .subcont {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .text {
+                width: 100%;
+                padding: 1rem;
+            }
+
+            .footer {
+                flex-direction: column;
+            }
+
+            .footer__addr {
+                margin-bottom: 1rem;
+            }
+
+            .footer__nav {
+                flex-direction: column;
+            }
+
+            .footer__nav > * {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+        }
+        .subcont{
+            min-width: 20rem;
+            
+            
+        }
+        .cont2{
+            display: flex;
+            flex-wrap: wrap;
+            
+        }
+
+
+        
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navwrapper">
+            <div class="nav">
+                <div class="logo">
+                    <h3><Span class="color-red">Gym</Span>Gem</h3>
+                </div>
+                <ul>
+                    <h2>Commit To <span style="color: red;">Fit</span> </h2>
+                </ul>
+                <div class="register">
+                    
+                </div>
+            </div>
+        </div>
+            <div class="cont1"> 
+                <div class="latest">
+                    <div class="img">
+                       <img  alt=""> 
+                    </div>
+                    <div class="des">
+                        <span style="color: rgb(183, 183, 183);">March 24</span>
+                        <p>2024 Get Toned Challenge</p>
+                        <div class="dateandtime">
+                            <span><i class="fa-solid fa-calendar-days"></i> 00 date</span>
+                            <span>00 time <i class="fa-solid fa-stopwatch-20"></i></span>
+                        </div>
+                        <div class="info">
+                            <ul>
+                                <li>
+                                    <span style="color: rgb(105, 105, 105);">TYPE</span>
+                                    <p>Resistance, Full Body</p>
+                                </li>
+                                <li>
+                                    <span style="color: rgb(105, 105, 105);">EQUIPMENT</span>
+                                    <p>Fitness Mat, Dumbbells (Optional), Resistance Bands (Optional)</p>
+                                </li>
+                            </ul>
+                            <button id="upperarms" onclick="handleClick1('upper arms')">View Challenge</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text" style="padding: 1rem; width: 50%;">
+                <h2>Beginner Friendly</h2>
+                <p>Looking to get started on your fitness journey? Try one of these beginner-friendly programs! These have shorter time commitments or have low-impact alternatives.</p>
+            </div>
+
+            <div class="cont2">
+                <div class="subcont">
+                    <div style="background-image: url(https://images.unsplash.com/photo-1532384555668-bc0c32a17ffd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D); background-repeat: no-repeat; background-size: cover; border-radius: 1rem;" class="img">
+                    </div>
+                    <div class="des">
+                        <div class="info">
+                            <h4>2023 Feel the Chest Pump</h4>
+                            <div class="dataandtime">
+                                <span>00  <i class="fa-solid fa-fire"></i></span>
+                                <span>00   <i class="fa-solid fa-clock"></i></span>
+                                <button id="chest" onclick="handleClick1('chest')">View Challenge</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                
+                <div class="subcont" >
+                    <div style="background-image: url(https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D); background-repeat: no-repeat; background-size: cover; border-radius: 1rem;" class="img">
+
+                    </div>
+                    <div class="des">
+                        <div class="info">
+                            <h4>Unleash the power of your wings </h4>
+                            <div class="dataandtime">
+                                <span>00  <i class="fa-solid fa-fire"></i></span>
+                                <span>00   <i class="fa-solid fa-clock"></i></span>
+                                <button id="chest" onclick="handleClick1('back')">View Challenge</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+
+
+
+                <div class="subcont">
+                    <div style="background-image: url(https://i.pinimg.com/564x/32/fc/86/32fc86f0cd236eabbc802ec5cffdd39b.jpg); background-repeat: no-repeat; background-size: cover; border-radius: 1rem;" class="img">
+
+                    </div>
+                    <div class="des">
+                        <div class="info">
+                            <h4>Feel your Forearm</h4>
+                            <div class="dataandtime">
+                                <span>00  <i class="fa-solid fa-fire"></i></span>
+                                <span>00   <i class="fa-solid fa-clock"></i></span>
+                                <button id="lowerarms" onclick="handleClick1('lower arms')">View Challenge</button>
+
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+
+
+
+                <div class="subcont">
+                    <div style="background-image: url(https://i.pinimg.com/564x/d9/18/3b/d9183b3d492dc8bc34e7137f4b0ac135.jpg); background-repeat: no-repeat; background-size: cover; border-radius: 1rem;" class="img">
+
+                    </div>
+                    <div class="des">
+                        <div class="info">
+                            <h4>MAke your Triceps visile</h4>
+                            <div class="dataandtime">
+                                <span>00  <i class="fa-solid fa-fire"></i></span>
+                                <span>00   <i class="fa-solid fa-clock"></i></span>
+                                <button id="upperarms" onclick="handleClick1('upper arms')">View Challenge</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+
+
+
+                <div class="subcont">
+                    <div style="background-image: url(https://i.pinimg.com/736x/68/ad/98/68ad98caf45ab33d7e92b5f6f69763b4.jpg); background-repeat: no-repeat; background-size: cover; border-radius: 1rem;" class="img">
+
+                    </div>
+                    <div class="des">
+                        <div class="info">
+                            <h4>2023 Sweat now. Shine later</h4>
+                            <div class="dataandtime">
+                                <span>00  <i class="fa-solid fa-fire"></i></span>
+                                <span>00   <i class="fa-solid fa-clock"></i></span>
+                                <button id="waist" onclick="handleClick1('waist')">View Challenge</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="text" style="padding: 1rem; width: 50%; padding-top: 2rem;">
+                <h2>Moderate to Advanced</h2>
+                <p>If you're looking for something that pushes you a little harder, try any of these moderate to advanced challenges to help you progress further.</p>
+            </div>
+            <div class="cont2">
+                <div class="subcont">
+                    <div style="background-image: url(https://i.pinimg.com/564x/fa/8b/f4/fa8bf4fe59203c47efb96d7ab605a307.jpg); background-repeat: no-repeat; background-size: cover; border-radius: 1rem;" class="img">
+                    </div>
+                    <div class="des">
+                        <div class="info">
+                            <h4>Never skip your small muscle</h4>
+                            <div class="dataandtime">
+                                <span>00  <i class="fa-solid fa-fire"></i></span>
+                                <span>00   <i class="fa-solid fa-clock"></i></span>
+                                <button id="neck" onclick="handleClick1('neck')">View Challenge</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                
+                <div class="subcont">
+                    <div style="background-image: url(https://i.pinimg.com/564x/2a/19/1a/2a191af24cdc84e8b0b5bc7b7212bc89.jpg); background-repeat: no-repeat; background-size: cover; border-radius: 1rem;" class="img">
+
+                    </div>
+                    <div class="des">
+                        <div class="info">
+                            <h4>Never skip Cardio</h4>
+                            <div class="dataandtime">
+                                <span>00  <i class="fa-solid fa-fire"></i></span>
+                                <span>00   <i class="fa-solid fa-clock"></i></span>
+                                <button id="cardio" onclick="handleClick1('cardio')">View Challenge</button>
+                                
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+
+
+
+                <div class="subcont">
+                    <div style="background-image: url(https://i.pinimg.com/564x/08/12/92/08129213c1300bb92f93f6de9fb0305b.jpg); background-repeat: no-repeat; background-size: cover; border-radius: 1rem;" class="img">
+
+
+                    </div>
+                    <div class="des">
+                        <div class="info">
+                            <h4>Life is too short to skip leg day</h4>
+                            <div class="dataandtime">
+                                <span>00  <i class="fa-solid fa-fire"></i></span>
+                                <span>00   <i class="fa-solid fa-clock"></i></span>
+                                <button id="upperlegs" onclick="handleClick1('upper legs')">View Challenge</button>
+
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+
+
+
+                <div class="subcont">
+                    <div style="background-image: url(https://i.pinimg.com/564x/16/8d/e9/168de9b17754dd85c899a654fe664a8a.jpg); background-repeat: no-repeat; background-size: cover; border-radius: 1rem;" class="img">
+
+
+                    </div>
+                    <div class="des">
+                        <div class="info">
+                            <h4>Shoulder goals in progress.</h4>
+                            <div class="dataandtime">
+                                <span>00  <i class="fa-solid fa-fire"></i></span>
+                                <span>00   <i class="fa-solid fa-clock"></i></span>
+                                <button id="shoulders" onclick="handleClick1('shoulders')">View Challenge</button>
+
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+
+
+
+                <div class="subcont">
+                    <div style="background-image: url(https://i.pinimg.com/736x/08/aa/55/08aa55705e020ad41a4a12b346df7583.jpg); background-repeat: no-repeat; background-size: cover; border-radius: 1rem;" class="img">
+
+
+                    </div>
+                    <div class="des">
+                        <div class="info">
+                            <h4>Leg day, but make it count</h4>
+                            <div class="dataandtime">
+                                <span>00  <i class="fa-solid fa-fire"></i></span>
+                                <span>00   <i class="fa-solid fa-clock"></i></span>
+                                <button id="lowerlegs" onclick="handleClick1('lower legs')">View Challenge</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+            
+            <div class="text" style="padding: 1rem; width: 50%; padding-top: 2rem;">
+                <h2>You get what you work for</h2>
+                <p>The only bad workout is the one you missed,; Take care of your body, and it will take care of you. You get what you worked for.</p>
+            </div>
+            <div class="cont2">
+                
+            </div>
+
+
+
+
+
+
+            
+
+<header style="padding-top: 1rem;">
+    
+  </header>
+  
+  <main>
+    
+  </main>
+  
+  <footer class="footer">
+    <div class="footer__addr">
+      <h1 class="footer__logo">Something</h1>
+          
+      <h2>Contact</h2>
+      
+      <address>
+        5534 Somewhere In. The World 22193-10212<br>
+            
+        <a class="footer__btn" href="mailto:example@gmail.com">Email Us</a>
+      </address>
+    </div>
+    
+    <ul class="footer__nav">
+      <li class="nav__item">
+        <h2 class="nav__title">Media</h2>
+  
+        <ul class="nav__ul">
+          <li>
+            <a href="#">Online</a>
+          </li>
+  
+          <li>
+            <a href="#">Print</a>
+          </li>
+              
+          <li>
+            <a href="#">Alternative Ads</a>
+          </li>
+        </ul>
+      </li>
+      
+      <li class="nav__item nav__item--extra">
+        <h2 class="nav__title">Technology</h2>
+        
+        <ul class="nav__ul nav__ul--extra">
+          <li>
+            <a href="#">Hardware Design</a>
+          </li>
+          
+          <li>
+            <a href="#">Software Design</a>
+          </li>
+          
+          <li>
+            <a href="#">Digital Signage</a>
+          </li>
+          
+          <li>
+            <a href="#">Automation</a>
+          </li>
+          
+          <li>
+            <a href="#">Artificial Intelligence</a>
+          </li>
+          
+          <li>
+            <a href="#">IoT</a>
+          </li>
+        </ul>
+      </li>
+      
+      <li class="nav__item">
+        <h2 class="nav__title">Legal</h2>
+        
+        <ul class="nav__ul">
+          <li>
+            <a href="#">Privacy Policy</a>
+          </li>
+          
+          <li>
+            <a href="#">Terms of Use</a>
+          </li>
+          
+          <li>
+            <a href="#">Sitemap</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    
+    <div class="legal">
+      <p>&copy; 2019 Something. All rights reserved.</p>
+      
+      <div class="legal__links">
+        <span>Made with <span class="heart">♥</span> remotely from Anywhere</span>
+      </div>
+    </div>
+  </footer>
+  
+  
+
+            
+    </div>
+    <script src="https://kit.fontawesome.com/907da6b578.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
+</html>

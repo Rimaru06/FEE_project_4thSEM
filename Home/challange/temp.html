@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Muscle Exercise App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .cardcontainer {
+            display: flex;
+            flex-direction: row; /* Fix typo */
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .card {
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            flex-direction: column;
+            width: fit-content;
+            padding: 1rem;
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+            justify-content: space-around;
+            gap: 1rem;
+            /* Set display to none for cards after the third one */
+            display: flex;
+            flex-basis: calc(33.3333% - 1rem);
+            box-sizing: border-box;
+        }
+        .details ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: left;
+            margin-left: 2rem;
+            gap: 1rem;
+            background-color: rgb(84, 84, 84);
+            padding: 1rem;
+            border-radius: 1rem;
+        }
+        .details ul li {
+            background-color: transparent;
+            display: flex;
+            width: fit-content;
+            color: rgb(211, 211, 211);
+            font-weight: 200;
+            font-size: large;
+        }
+        .gif {
+            border-bottom: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <h2>Enter the muscle name!</h2>
+    <input type="text" id="inp" />
+    <button id="btn" type="button" onclick="handleClick3()">Submit</button>
+
+    <div id="container">
+        <h1>All about your muscle!</h1>
+        <br>
+        <div id="cardcontainer" class="cardcontainer">
+            <!-- Cards will be dynamically added here -->
+        </div>
+    </div>
+
+    <script>
+        async function handleClick3() {
+            try {
+                const muscleName = document.getElementById("inp").value;
+
+                const url = `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${muscleName}?limit=10`;
+
+                const options = {
+                    method: "GET",
+                    headers: {
+                        "X-RapidAPI-Key": "916531ba40msh7bc4bdfc846058cp191e1cjsn66d202ebf942",
+                        "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
+                    },
+                };
+
+                const response = await fetch(url, options);
+                const data = await response.json();
+                console.log(data);
+
+                const cardContainer = document.getElementById("cardcontainer");
+                cardContainer.innerHTML = ""; // Clear previous data
+
+                data.slice(0, 9).forEach((item) => {
+                    cardContainer.innerHTML += `
+                        <div class="card">
+                            <div class="gif">
+                                <img src="${item.gifUrl}" alt="Exercise Gif">
+                            </div>
+                            <div class="details">
+                                <ul>
+                                    <li>Exercise Name: ${item.name}</li>
+                                    <li>Body Part: ${item.bodyPart}</li>
+                                    <li>Equipment: ${item.equipment}</li>
+                                    <li>Target: ${item.target}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `;
+                });
+            } catch (error) {
+                console.error(error);
+            }
+        }
+    </script>
+</body>
+</html>
