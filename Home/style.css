@@ -11,7 +11,7 @@
   height: 100px;
   width: 100vw;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   position: relative;
 }
@@ -19,6 +19,10 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  padding-left: 5rem;
+}
+.navbar .nav {
+  padding-right: 5rem;
 }
 .navbar .logo .gymText {
   color: red;
@@ -121,18 +125,25 @@ transition: 0.5s;
     gap: 3px;
 
   }
+  .navbar .nav {
+    padding-right: 0;
+  }
   .navbar {
     height: 8rem;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     gap: 3px;
 
+  }
+  .navbar .logo{
+    padding-left: 0;
   }
   .navbar .icons i {
   font-size: 1.5rem;
 }
 .banner-section{
-    height: calc(100vh - 8rem - 60px);
+    height: calc(100vh - 8rem);
 
 }
 }
